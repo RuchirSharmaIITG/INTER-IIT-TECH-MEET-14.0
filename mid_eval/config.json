@@ -1,0 +1,11 @@
+{
+    "data_path": ".",
+    "start_date": 0,
+    "end_date": 509,
+    "timer": 600,
+    "tcost": 2,
+    "broadcast": [
+        "FINAL_SUB_X/SIGNALS_EBX",
+        "FINAL_SUB_Y/SIGNALS_EBY"
+    ]
+}

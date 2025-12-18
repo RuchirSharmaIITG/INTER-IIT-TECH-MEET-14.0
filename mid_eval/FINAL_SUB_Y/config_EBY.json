@@ -1,0 +1,101 @@
+{
+  "paths": {
+    "data_dir": ["EBX", "EBY"],
+    "train_data_dir": "train_data_EBY",
+    "test_data_dir": "test_data_EBY",
+    "signals_dir": "SIGNALS_EBY",
+    "plots_dir": "PHOTOS_EBY",
+    "models_dir" : "MODELS", 
+    "model_file": "MODELS/xgb_model_EBY.json",
+    "scaler_file": "MODELS/scaler_EBY.pkl",
+    "feature_names_file": "MODELS/features_EBY.txt",
+    "train_days_file": "train_days_EBY.txt",
+    "test_days_file": "test_days_EBY.txt"
+  },
+  
+  "features": {
+    "families": [
+              "PB1_T", "PB2_T", "PB3_T", "PB4_T", "PB6_T", "PB8_T", "PB10_T", "PB11_T",
+              "PB14_T", "PB18_T", "VB1_T", "VB2_T", "VB3_T", "VB4_T", "VB6_T", 
+              "BB7", "BB8", "BB9", "BB11", "BB12", "BB14", "BB15", "BB23", "BB24", "BB25"
+            ]
+            ,
+    "max_t": 6,
+    "max_t_drop": 120
+  },
+  
+  "kalman": {
+    "q": 0.00001,
+    "r": 1.0,
+    "slope_period": 5,
+    "slope_std_mult": 1.0
+  },
+  
+  "regime": {
+    "t": 7,
+    "rst": 8,
+    "lim": 15,
+    "th": 2
+  },
+  
+  "training": {
+    "lookback": 30,
+    "hold_ratio": 1.0,
+    "batch_size": 60000,
+    "early_stop": 400
+  },
+  
+  "xgboost": {
+    "objective": "multi:softprob",
+    "num_class": 3,
+    "eval_metric": "mlogloss",
+    "max_depth": 3,
+    "learning_rate": 0.04,
+    "n_estimators": 1200,
+    "subsample": 0.7,
+    "colsample_bytree": 0.7,
+    "min_child_weight": 5,
+    "gamma": 0.1,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "random_state": 42,
+    "n_jobs": 4,
+    "tree_method": "hist",
+    "max_bin": 128
+  },
+  
+  "testing": {
+    "stride": 4,
+    "confidence_threshold": 0.5,
+    "prediction_batch_size": 10000
+  },
+  
+  "strategy": {
+    "candle_minutes": 25,
+    "threshold_open": 10,
+    "threshold_close": 15,
+    "warmup_minutes": 5,
+    "whipsaw_detection": false,
+    "whipsaw_observation_minutes": 60,
+    "opening_range_candles": 3
+  },
+  
+  "risk": {
+    "stop_loss_pct": 0.002,
+    "take_profit_pct": 0.004,
+    "trailing_stop_pct": 0.0035,
+    "min_holding_time_seconds": 15,
+    "min_time_between_trades_seconds": 15
+  },
+  
+  "backtesting": {
+    "initial_capital": 100000,
+    "transaction_cost_rate": 0.0002
+  },
+
+  "backtest": {
+    "ticker_name": "EBY",
+    "tcost": 2,
+    "timer_seconds": 600
+  }
+}

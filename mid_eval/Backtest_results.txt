@@ -1,0 +1,4 @@
+                           Final_Equity      PnL_Rs      PnL_%    Sharpe    Sortino     Calmar  Max_Drawdown_%  Positive_Trades  Negative_Trades  Total_Trades  WinRate_%
+Ticker
+FINAL_SUB_X/SIGNALS_EBX    126.004783      26.004783   26.004783  4.718359  13.662534   12.698462   2.047869            899.0            776.0        1677.0     53.607633
+FINAL_SUB_Y/SIGNALS_EBY    114.082885      14.082885   14.082885  4.075442  13.995271   12.543897   1.122688            564.0            297.0         861.0     65.505226
